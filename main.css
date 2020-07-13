@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  transition: background 0.3s;
+}
+
+nav {
+  background: white;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0 0;
+  background: white;
+  position: relative;
+}
+ul[data-position="0"] .slider {
+  transform: translateX(0);
+}
+ul[data-position="1"] .slider {
+  transform: translateX(100%);
+}
+ul[data-position="2"] .slider {
+  transform: translateX(200%);
+}
+ul[data-position="3"] .slider {
+  transform: translateX(300%);
+}
+ul[data-position="4"] .slider {
+  transform: translateX(400%);
+}
+
+li {
+  flex: 1 1 20%;
+  text-align: center;
+  margin: 0;
+  padding: 15px;
+  box-sizing: border-box;
+}
+li.slider {
+  position: absolute;
+  width: 20%;
+  left: 0;
+  bottom: 0;
+  height: 75%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: transform 0.5s cubic-bezier(0.6, 0.09, 0, 1.12), background 0.3s;
+}
+li.slider span:first-child,
+li.slider span:last-child {
+  position: absolute;
+  bottom: 0;
+  height: 10px;
+  width: 10px;
+  background: white;
+  border-radius: 50%;
+  transition: border 0.3s;
+}
+li.slider span:first-child {
+  right: -11px;
+  border-left: 3px solid transparent;
+  transform: rotate(-45deg);
+}
+li.slider span:last-child {
+  left: -11px;
+  border-right: 3px solid transparent;
+  transform: rotate(45deg);
+}
+
+a {
+  position: relative;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: black;
+  z-index: 1;
+  transition: color 0.3s;
+}
+
+/*# sourceMappingURL=main.css.map */
