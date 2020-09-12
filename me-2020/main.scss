@@ -1,0 +1,171 @@
+body { 
+    margin: 0;
+    background: black; // maybe a cool picture here
+    color: white;
+    font-family: sans-serif;
+}
+
+.header {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+
+    &__text {
+        animation: fadeIn 1s;
+        animation-delay: .25s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40vh;
+        max-height: 280px;
+        margin: 0;
+        
+        font-size: 26px;
+        text-shadow: 0 0 10px black;
+        background-image: url('images/long-lake.jpg');
+        background-position: 50% 35%;
+        background-size: cover;
+    }
+}
+
+.section {
+    background: lightseagreen;
+    color: black;
+    padding: 60px 0;
+
+    &--sliced {
+        margin-top: 170px;
+        padding-top: 70px;
+        height: 60vh; // (100% - header__text height)
+        clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
+        background: white;
+    }
+
+    &__content {
+        width: 85%;
+        margin: 0 auto;
+        line-height: 1.5;
+
+        &--hidden {
+            opacity: 0;
+            max-width: 800px;
+        }
+    }
+
+    &__header {
+        margin: 0 0 20px;
+        font-size: 24px;
+    }
+
+    &__copy {
+        margin: 0 auto;
+    }
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: block;
+    border: 3px solid lightseagreen;
+
+    &:hover {
+        transform: rotateY(360deg);
+        transition: transform 1s;
+    }
+}
+
+.tag-line {
+    opacity: 0;
+    font-size: 18px;
+    text-align: center;
+
+    animation: fadeUp .5s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+.fade-in {
+    animation: fadeIn 1s;
+    animation-fill-mode: forwards;
+}
+
+.fade-copy {
+    margin: 40px auto;
+    max-width: 600px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn .5s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        &__text {
+            height: 35vh;
+            max-height: unset;
+            font-size: 36px;
+        }
+    }
+
+    .section {
+        &--sliced {
+            margin-top: 200px;
+            padding-top: 130px;
+            clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+        }
+
+        &__content {
+            max-width: 60%;
+        }
+    }
+
+    .tag-line {
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .header {
+        &__text {
+            font-size: 40px;
+            background-position: 50% 50%;
+        }
+    }
+
+    .section {
+        &--sliced {
+            margin-top: 250px;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    0% {
+        transform: translateY(1000%);
+    }
+
+    75% {
+        opacity: .25;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
