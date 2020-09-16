@@ -21,7 +21,6 @@ body {
         align-items: center;
         justify-content: center;
         height: 40vh;
-        max-height: 280px;
         margin: 0;
         
         font-size: 26px;
@@ -38,9 +37,9 @@ body {
     padding: 60px 0;
 
     &--sliced {
-        margin-top: 170px;
-        padding-top: 70px;
-        height: 60vh; // (100% - header__text height)
+        height: 50vh; // (100% - header__text height)
+        margin-top: 30vh;
+        padding: 10vh 0;
         clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
         background: white;
     }
@@ -58,7 +57,7 @@ body {
 
     &__header {
         margin: 0 0 20px;
-        font-size: 24px;
+        font-size: 18px;
     }
 
     &__copy {
@@ -68,8 +67,8 @@ body {
 
 .profile-pic {
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     display: block;
     border: 3px solid lightseagreen;
 
@@ -107,7 +106,6 @@ body {
 @media screen and (min-width: 768px) {
     .header {
         &__text {
-            height: 35vh;
             max-height: unset;
             font-size: 36px;
         }
@@ -115,8 +113,9 @@ body {
 
     .section {
         &--sliced {
-            margin-top: 200px;
-            padding-top: 130px;
+            height: 40vh;
+            margin-top: 30vh;
+            padding: 15vh 0;
             clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
         }
 
@@ -128,6 +127,11 @@ body {
     .tag-line {
         font-size: 24px;
     }
+
+    .profile-pic {
+        height: 200px;
+        width: 200px;
+    }
 }
 
 @media screen and (min-width: 1200px) {
@@ -135,12 +139,6 @@ body {
         &__text {
             font-size: 40px;
             background-position: 50% 50%;
-        }
-    }
-
-    .section {
-        &--sliced {
-            margin-top: 250px;
         }
     }
 }
