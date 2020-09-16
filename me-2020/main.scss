@@ -45,7 +45,7 @@ body {
     }
 
     &__content {
-        width: 85%;
+        width: 95%;
         margin: 0 auto;
         line-height: 1.5;
 
@@ -57,11 +57,12 @@ body {
 
     &__header {
         margin: 0 0 20px;
-        font-size: 18px;
+        font-size: 14px;
     }
 
     &__copy {
         margin: 0 auto;
+        font-size: 14px;
     }
 }
 
@@ -80,7 +81,7 @@ body {
 
 .tag-line {
     opacity: 0;
-    font-size: 18px;
+    font-size: 14px;
     text-align: center;
 
     animation: fadeUp .5s;
@@ -94,13 +95,33 @@ body {
 }
 
 .fade-copy {
-    margin: 40px auto;
+    margin: 20px auto;
     max-width: 600px;
     text-align: center;
     opacity: 0;
     animation: fadeIn .5s;
     animation-delay: 3s;
     animation-fill-mode: forwards;
+}
+
+@media screen and (min-width: 350px) {
+    .section {
+        &__header {
+            font-size: 18px;
+        }
+
+        &__copy {
+            font-size: 16px;
+        }
+    }
+
+    .fade-copy {
+        margin: 40px auto;
+    }
+
+    .tag-line {
+        font-size: 18px;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -114,13 +135,8 @@ body {
     .section {
         &--sliced {
             height: 40vh;
-            margin-top: 30vh;
             padding: 15vh 0;
             clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
-        }
-
-        &__content {
-            max-width: 60%;
         }
     }
 
@@ -140,6 +156,25 @@ body {
             font-size: 40px;
             background-position: 50% 50%;
         }
+    }
+}
+
+@media (orientation: landscape) and (max-width: 850px) {
+    .section {
+    
+        &--sliced {
+            height: auto;
+            padding: 20vh;
+        }
+    }
+
+    .header__text {
+        height: 50vh;
+        font-size: 26px;
+    }
+
+    .tag-line {
+        font-size: 18px;
     }
 }
 
