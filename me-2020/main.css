@@ -1,10 +1,157 @@
 body {
   margin: 0;
-  background: black;
   color: white;
   font-family: sans-serif;
 }
 
+a {
+  color: lightseagreen;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  width: 275px;
+  list-style: none;
+  margin: 20px auto;
+  padding: 20px;
+  min-height: 250px;
+  border-radius: 10px;
+  border: 1px solid #d0d0d0;
+  transition: transform 0.5s;
+}
+.card--html {
+  background: #ffc966;
+  box-shadow: 0 0 15px orange;
+  transform: rotateZ(0);
+}
+.card--css {
+  background: #fff3f5;
+  box-shadow: 0 0 15px pink;
+  transform: rotateZ(-3deg) translateY(-100px);
+}
+.card--js {
+  background: #ffff4d;
+  box-shadow: 0 0 15px yellow;
+  transform: translateY(-160px) rotate(4deg);
+}
+.card--sf {
+  background: #d0ecfd;
+  box-shadow: 0 0 15px lightskyblue;
+  transform: rotateZ(-2deg) translateY(-245px);
+}
+.card--wp {
+  background: #eaeaea;
+  box-shadow: 0 0 15px #d0d0d0;
+  transform: rotateZ(0deg) translateY(-360px);
+}
+.card__header {
+  margin: 0;
+  font-size: 16px;
+  text-align: center;
+  font-style: italic;
+}
+
+@media screen and (min-width: 768px) {
+  .cards {
+    flex-direction: row;
+  }
+
+  .card {
+    margin: 20px 0;
+    flex-basis: 40%;
+  }
+  .card--html {
+    transform: rotateZ(-10deg) translateY(30px);
+  }
+  .card--html.stacked {
+    transform: rotateZ(-8deg) translateX(210%) translateY(50px);
+  }
+  .card--css {
+    transform: rotateZ(-5deg);
+  }
+  .card--css.stacked {
+    transform: rotateZ(5deg) translateX(118%) translateY(10px);
+  }
+  .card--js {
+    transform: translateY(-10px);
+  }
+  .card--js.stacked {
+    transform: rotateZ(-10deg) translateY(10px);
+  }
+  .card--sf {
+    transform: rotateZ(5deg);
+  }
+  .card--sf.stacked {
+    transform: rotateZ(0) translateY(0) translateX(-85%);
+  }
+  .card--wp {
+    transform: rotateZ(10deg) translateY(30px);
+  }
+  .card--wp.stacked {
+    transform: rotateZ(-4deg) translateY(5px) translateX(-188%);
+  }
+  .card__header {
+    font-size: 18px;
+  }
+}
+.section {
+  background: white;
+  color: black;
+  padding: 60px 0;
+}
+.section--sliced {
+  height: 50vh;
+  margin-top: 30vh;
+  padding: 10vh 0;
+  clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
+  background: white;
+}
+.section__content {
+  width: 95%;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+.section__content--hidden {
+  opacity: 0;
+  min-height: 100vh;
+  max-width: 1100px;
+}
+.section__header {
+  margin: 0 0 20px;
+  font-size: 14px;
+}
+.section__copy {
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 350px) {
+  .section__header {
+    font-size: 18px;
+  }
+  .section__copy {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .section--sliced {
+    height: 40vh;
+    padding: 15vh 0;
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+  }
+}
+@media (orientation: landscape) and (max-width: 850px) {
+  .section--sliced {
+    height: auto;
+    padding: 20vh;
+  }
+}
 .header {
   position: fixed;
   z-index: -1;
@@ -29,46 +176,13 @@ body {
   background-size: cover;
 }
 
-.section {
-  background: lightseagreen;
-  color: black;
-  padding: 60px 0;
-}
-.section--sliced {
-  height: 50vh;
-  margin-top: 30vh;
-  padding: 10vh 0;
-  clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
-  background: white;
-}
-.section__content {
-  width: 95%;
-  margin: 0 auto;
-  line-height: 1.5;
-}
-.section__content--hidden {
-  opacity: 0;
-  max-width: 800px;
-}
-.section__header {
-  margin: 0 0 20px;
-  font-size: 14px;
-}
-.section__copy {
-  margin: 0 auto;
-  font-size: 14px;
-}
-
 .profile-pic {
   border-radius: 50%;
   width: 150px;
   height: 150px;
   display: block;
-  border: 3px solid lightseagreen;
-}
-.profile-pic:hover {
-  transform: rotateY(360deg);
-  transition: transform 1s;
+  box-shadow: 0 0 15px lightseagreen;
+  border: 1px solid white;
 }
 
 .tag-line {
@@ -96,13 +210,6 @@ body {
 }
 
 @media screen and (min-width: 350px) {
-  .section__header {
-    font-size: 18px;
-  }
-  .section__copy {
-    font-size: 16px;
-  }
-
   .fade-copy {
     margin: 40px auto;
   }
@@ -117,19 +224,13 @@ body {
     font-size: 36px;
   }
 
-  .section--sliced {
-    height: 40vh;
-    padding: 15vh 0;
-    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
-  }
-
   .tag-line {
     font-size: 24px;
   }
 
   .profile-pic {
-    height: 200px;
     width: 200px;
+    height: 200px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -139,11 +240,6 @@ body {
   }
 }
 @media (orientation: landscape) and (max-width: 850px) {
-  .section--sliced {
-    height: auto;
-    padding: 20vh;
-  }
-
   .header__text {
     height: 50vh;
     font-size: 26px;

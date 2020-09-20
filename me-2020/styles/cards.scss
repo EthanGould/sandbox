@@ -1,0 +1,112 @@
+.cards {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    width: 275px;
+    list-style: none;
+    margin: 20px auto;
+    padding: 20px;
+    min-height: 250px;
+    border-radius: 10px;
+    border: 1px solid #d0d0d0;
+    transition: transform .5s;
+
+    &--html {
+        background: lighten(orange, 20%);
+        box-shadow: 0 0 15px orange;
+        transform: rotateZ(0);
+    }
+
+    &--css {
+        background: lighten(pink, 10%);
+        box-shadow: 0 0 15px pink;
+        transform: rotateZ(-3deg) translateY(-100px);
+    }
+
+    &--js {
+        background: lighten(yellow, 15%);
+        box-shadow: 0 0 15px yellow;
+        transform: translateY(-160px) rotate(4deg);
+    }
+
+    &--sf {
+        background: lighten(lightskyblue, 15%);
+        box-shadow: 0 0 15px lightskyblue;
+        transform: rotateZ(-2deg) translateY(-245px);
+    }
+
+    &--wp {
+        background: lighten(#d0d0d0, 10%);
+        box-shadow: 0 0 15px #d0d0d0;
+        transform: rotateZ(0deg) translateY(-360px);
+    }
+
+    &__header {
+        margin: 0;
+        font-size: 16px;
+        text-align: center;
+        font-style: italic;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .cards {
+        flex-direction: row;
+    }
+
+    .card {
+        margin: 20px 0;
+        flex-basis: 40%;
+
+
+        &--html {
+            transform: rotateZ(-10deg) translateY(30px);
+
+            &.stacked {
+                transform: rotateZ(-8deg) translateX(210%) translateY(50px);
+            }
+        }
+
+        &--css {
+            transform: rotateZ(-5deg);
+
+            &.stacked {
+                transform: rotateZ(5deg) translateX(118%) translateY(10px);
+            }
+        }
+
+        &--js {
+            transform: translateY(-10px);
+
+            &.stacked {
+                transform: rotateZ(-10deg) translateY(10px);
+            }
+        }
+
+        &--sf {
+            transform: rotateZ(5deg);
+
+            &.stacked {
+                transform: rotateZ(0) translateY(0) translateX(-85%);
+            }
+        }
+
+        &--wp {
+            transform: rotateZ(10deg) translateY(30px);
+
+            &.stacked {
+                transform: rotateZ(-4deg) translateY(5px) translateX(-188%);
+            }
+        }
+
+        &__header {
+            font-size: 18px;
+        }
+    }
+}

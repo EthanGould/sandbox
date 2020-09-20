@@ -1,9 +1,15 @@
 body { 
     margin: 0;
-    background: black; // maybe a cool picture here
     color: white;
     font-family: sans-serif;
 }
+
+a {
+    color: lightseagreen;
+}
+
+@import 'styles/cards';
+@import 'styles/section';
 
 .header {
     position: fixed;
@@ -31,52 +37,13 @@ body {
     }
 }
 
-.section {
-    background: lightseagreen;
-    color: black;
-    padding: 60px 0;
-
-    &--sliced {
-        height: 50vh; // (100% - header__text height)
-        margin-top: 30vh;
-        padding: 10vh 0;
-        clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
-        background: white;
-    }
-
-    &__content {
-        width: 95%;
-        margin: 0 auto;
-        line-height: 1.5;
-
-        &--hidden {
-            opacity: 0;
-            max-width: 800px;
-        }
-    }
-
-    &__header {
-        margin: 0 0 20px;
-        font-size: 14px;
-    }
-
-    &__copy {
-        margin: 0 auto;
-        font-size: 14px;
-    }
-}
-
 .profile-pic {
     border-radius: 50%;
     width: 150px;
     height: 150px;
     display: block;
-    border: 3px solid lightseagreen;
-
-    &:hover {
-        transform: rotateY(360deg);
-        transition: transform 1s;
-    }
+    box-shadow: 0 0 15px lightseagreen;
+    border: 1px solid white;
 }
 
 .tag-line {
@@ -105,15 +72,6 @@ body {
 }
 
 @media screen and (min-width: 350px) {
-    .section {
-        &__header {
-            font-size: 18px;
-        }
-
-        &__copy {
-            font-size: 16px;
-        }
-    }
 
     .fade-copy {
         margin: 40px auto;
@@ -125,18 +83,11 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+
     .header {
         &__text {
             max-height: unset;
             font-size: 36px;
-        }
-    }
-
-    .section {
-        &--sliced {
-            height: 40vh;
-            padding: 15vh 0;
-            clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
         }
     }
 
@@ -145,8 +96,8 @@ body {
     }
 
     .profile-pic {
-        height: 200px;
         width: 200px;
+        height: 200px;
     }
 }
 
@@ -160,13 +111,6 @@ body {
 }
 
 @media (orientation: landscape) and (max-width: 850px) {
-    .section {
-    
-        &--sliced {
-            height: auto;
-            padding: 20vh;
-        }
-    }
 
     .header__text {
         height: 50vh;
