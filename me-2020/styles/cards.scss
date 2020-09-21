@@ -1,13 +1,11 @@
 .cards {
     display: flex;
     flex-direction: column;
-    margin: 0;
-    padding: 0;
+    margin-bottom: -200px;
 }
 
 .card {
     width: 275px;
-    list-style: none;
     margin: 20px auto;
     padding: 20px;
     min-height: 250px;
@@ -16,7 +14,7 @@
     transition: transform .5s;
 
     &--html {
-        background: lighten(orange, 20%);
+        background: lighten(orange, 25%);
         box-shadow: 0 0 15px orange;
         transform: rotateZ(0);
     }
@@ -28,7 +26,7 @@
     }
 
     &--js {
-        background: lighten(yellow, 15%);
+        background: lighten(yellow, 25%);
         box-shadow: 0 0 15px yellow;
         transform: translateY(-160px) rotate(4deg);
     }
@@ -58,10 +56,11 @@
 
     .cards {
         flex-direction: row;
+        margin: 0;
     }
 
     .card {
-        margin: 20px 0;
+        margin: 20px 0 200px;
         flex-basis: 40%;
 
 

@@ -4,7 +4,7 @@ module.init = () => {
     module.siteContent = document.querySelector('.section--sliced');
     module.siteMainContent = document.querySelector('.js-main-content');
     module.cards = document.querySelectorAll('.js-card');
-    module.cardSpreadOffset = 450;
+    module.cardSpreadOffset = 550;
 
     module.events();
 }

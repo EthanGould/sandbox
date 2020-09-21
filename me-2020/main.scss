@@ -5,11 +5,28 @@ body {
 }
 
 a {
-    color: lightseagreen;
+    color: #306762;
+    transition: color 0.2s;
+
+    &:hover,
+    &:focus {
+        color: #306762;
+    }
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
 }
 
 @import 'styles/cards';
+@import 'styles/posts';
 @import 'styles/section';
+
 
 .header {
     position: fixed;
