@@ -139,6 +139,12 @@ li {
     }
 }
 
+@media (max-height: 1700px) {
+    .section--sliced {
+        min-height: 500px;
+    }
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
