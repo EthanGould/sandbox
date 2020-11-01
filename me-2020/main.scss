@@ -5,12 +5,12 @@ body {
 }
 
 a {
-    color: #306762;
+    color: #910083;
     transition: color 0.2s;
 
     &:hover,
     &:focus {
-        color: #306762;
+        color: #b302a1;
     }
 }
 
@@ -46,9 +46,10 @@ li {
         height: 40vh;
         margin: 0;
         
+        font-family: 'Carter One', sans-serif;
         font-size: 26px;
         text-shadow: 0 0 10px black;
-        background-image: url('images/long-lake-optimized.jpg');
+        background-image: url('images/tub-cat-optimized.jpg');
         background-position: 50% 35%;
         background-size: cover;
     }
@@ -58,9 +59,16 @@ li {
     border-radius: 50%;
     width: 150px;
     height: 150px;
+    padding: 5px;
     display: block;
-    box-shadow: 0 0 15px lightseagreen;
-    border: 1px solid white;
+
+    &-border {
+        background: linear-gradient(310deg, #aaffad, #76fff8);
+        width: 160px;
+        height: 160px;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
 }
 
 .tag-line {
@@ -84,7 +92,7 @@ li {
     text-align: center;
     opacity: 0;
     animation: fadeIn .5s;
-    animation-delay: 3s;
+    animation-delay: 2s;
     animation-fill-mode: forwards;
 }
 
@@ -115,6 +123,11 @@ li {
     .profile-pic {
         width: 200px;
         height: 200px;
+
+        &-border {
+            width: 210px;
+            height: 210px;
+        }
     }
 }
 
@@ -136,12 +149,6 @@ li {
 
     .tag-line {
         font-size: 18px;
-    }
-}
-
-@media (max-height: 1700px) {
-    .section--sliced {
-        min-height: 500px;
     }
 }
 

@@ -10,36 +10,31 @@
     padding: 20px;
     min-height: 250px;
     border-radius: 10px;
-    border: 1px solid #d0d0d0;
+    border: 1px solid grey;
     transition: transform .5s;
 
     &--html {
-        background: lighten(orange, 25%);
-        box-shadow: 0 0 15px orange;
+        background: linear-gradient(217deg, #76fff8, #aaffad);
         transform: rotateZ(0);
     }
 
     &--css {
-        background: lighten(pink, 10%);
-        box-shadow: 0 0 15px pink;
+        background: linear-gradient(10deg, #aaffad, #76fff8);
         transform: rotateZ(-3deg) translateY(-100px);
     }
 
     &--js {
-        background: lighten(yellow, 25%);
-        box-shadow: 0 0 15px yellow;
+        background: linear-gradient(240deg, #aaffad, #76fff8);
         transform: translateY(-160px) rotate(4deg);
     }
 
     &--sf {
-        background: lighten(lightskyblue, 15%);
-        box-shadow: 0 0 15px lightskyblue;
+        background: linear-gradient(190deg, #76fff8, #aaffad);
         transform: rotateZ(-2deg) translateY(-245px);
     }
 
     &--wp {
-        background: lighten(#d0d0d0, 10%);
-        box-shadow: 0 0 15px #d0d0d0;
+        background: linear-gradient(310deg, #aaffad, #76fff8);
         transform: rotateZ(0deg) translateY(-360px);
     }
 
@@ -47,7 +42,7 @@
         margin: 0;
         font-size: 16px;
         text-align: center;
-        font-style: italic;
+        font-family: 'Carter One', sans-serif;
     }
 }
 

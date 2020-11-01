@@ -6,11 +6,11 @@ body {
 }
 
 a {
-  color: #306762;
+  color: #910083;
   transition: color 0.2s;
 }
 a:hover, a:focus {
-  color: #306762;
+  color: #b302a1;
 }
 
 ul {
@@ -34,39 +34,34 @@ li {
   padding: 20px;
   min-height: 250px;
   border-radius: 10px;
-  border: 1px solid #d0d0d0;
+  border: 1px solid grey;
   transition: transform 0.5s;
 }
 .card--html {
-  background: #ffd280;
-  box-shadow: 0 0 15px orange;
+  background: linear-gradient(217deg, #76fff8, #aaffad);
   transform: rotateZ(0);
 }
 .card--css {
-  background: #fff3f5;
-  box-shadow: 0 0 15px pink;
+  background: linear-gradient(10deg, #aaffad, #76fff8);
   transform: rotateZ(-3deg) translateY(-100px);
 }
 .card--js {
-  background: #ffff80;
-  box-shadow: 0 0 15px yellow;
+  background: linear-gradient(240deg, #aaffad, #76fff8);
   transform: translateY(-160px) rotate(4deg);
 }
 .card--sf {
-  background: #d0ecfd;
-  box-shadow: 0 0 15px lightskyblue;
+  background: linear-gradient(190deg, #76fff8, #aaffad);
   transform: rotateZ(-2deg) translateY(-245px);
 }
 .card--wp {
-  background: #eaeaea;
-  box-shadow: 0 0 15px #d0d0d0;
+  background: linear-gradient(310deg, #aaffad, #76fff8);
   transform: rotateZ(0deg) translateY(-360px);
 }
 .card__header {
   margin: 0;
   font-size: 16px;
   text-align: center;
-  font-style: italic;
+  font-family: "Carter One", sans-serif;
 }
 
 @media screen and (min-width: 768px) {
@@ -164,6 +159,7 @@ li {
   background: white;
   color: black;
   padding: 60px 0;
+  margin-top: -1px;
 }
 .section--sliced {
   height: 50vh;
@@ -185,9 +181,10 @@ li {
 .section__header {
   margin: 0 0 20px;
   font-size: 14px;
+  font-family: "Carter One", sans-serif;
 }
 .section__copy {
-  margin: 0 auto;
+  margin: 0 auto 30px;
   font-size: 14px;
 }
 
@@ -202,8 +199,13 @@ li {
 @media screen and (min-width: 768px) {
   .section--sliced {
     height: 40vh;
-    padding: 15vh 0;
+    padding: 15vh 0 0;
     clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+  }
+}
+@media (max-height: 1700px) {
+  .section--sliced {
+    min-height: 500px;
   }
 }
 @media (orientation: landscape) and (max-width: 850px) {
@@ -229,9 +231,10 @@ li {
   justify-content: center;
   height: 40vh;
   margin: 0;
+  font-family: "Carter One", sans-serif;
   font-size: 26px;
   text-shadow: 0 0 10px black;
-  background-image: url("images/long-lake-optimized.jpg");
+  background-image: url("images/tub-cat-optimized.jpg");
   background-position: 50% 35%;
   background-size: cover;
 }
@@ -240,9 +243,15 @@ li {
   border-radius: 50%;
   width: 150px;
   height: 150px;
+  padding: 5px;
   display: block;
-  box-shadow: 0 0 15px lightseagreen;
-  border: 1px solid white;
+}
+.profile-pic-border {
+  background: linear-gradient(310deg, #aaffad, #76fff8);
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  border-radius: 50%;
 }
 
 .tag-line {
@@ -265,7 +274,7 @@ li {
   text-align: center;
   opacity: 0;
   animation: fadeIn 0.5s;
-  animation-delay: 3s;
+  animation-delay: 2s;
   animation-fill-mode: forwards;
 }
 
@@ -292,6 +301,10 @@ li {
     width: 200px;
     height: 200px;
   }
+  .profile-pic-border {
+    width: 210px;
+    height: 210px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .header__text {
@@ -307,11 +320,6 @@ li {
 
   .tag-line {
     font-size: 18px;
-  }
-}
-@media (max-height: 1700px) {
-  .section--sliced {
-    min-height: 500px;
   }
 }
 @keyframes fadeIn {
