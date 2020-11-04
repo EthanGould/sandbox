@@ -22,6 +22,14 @@ li {
   list-style: none;
 }
 
+::selection {
+  background: #fac6ff;
+}
+
+::-moz-selection {
+  background: #fac6ff;
+}
+
 .cards {
   display: flex;
   flex-direction: column;

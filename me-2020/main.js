@@ -4,6 +4,8 @@ module.init = () => {
     module.siteContent = document.querySelector('.section--sliced');
     module.siteMainContent = document.querySelector('.js-main-content');
     module.cards = document.querySelectorAll('.js-card');
+    module.header = document.querySelector('.js-header');
+    module.headerText = document.querySelector('.js-header-text');
     module.cardSpreadOffset = 550;
 
     module.events();
@@ -11,7 +13,6 @@ module.init = () => {
 
 module.events = () => {
     window.addEventListener('scroll', module.handleScroll);
-
 };
 
 module.handleScroll = ()  => {
@@ -27,6 +28,8 @@ module.handleScroll = ()  => {
     } else {
         module.collapseCards();
     }
+
+    module.fadeHeader();
 }
 
 module.spreadCards = () => {
@@ -47,6 +50,13 @@ module.collapseCards = () => {
 
 module.fadeContent = () => {
     module.siteMainContent.classList.add('fade-in');
+}
+
+module.fadeHeader = () => {
+    var topScroll = module.siteContent.getBoundingClientRect().top;
+    var headerheight = module.headerText.clientHeight;
+
+    module.header.style.filter = 'brightness(' + ((topScroll / (headerheight - 100)) * 100) + '%)';
 }
 
 window.addEventListener('load', () => {

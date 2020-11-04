@@ -23,6 +23,14 @@ li {
     list-style: none;
 }
 
+::selection {
+    background: #fac6ff;
+}
+
+::-moz-selection {
+    background: #fac6ff;
+}
+
 @import 'styles/cards';
 @import 'styles/posts';
 @import 'styles/section';
