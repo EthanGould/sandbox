@@ -217,10 +217,11 @@ li {
   }
 }
 .socials {
-  display: none;
+  display: flex;
   justify-content: center;
 }
 .socials--stuck {
+  display: none;
   position: fixed;
   top: 20px;
 }
@@ -236,7 +237,7 @@ li {
 }
 
 @media screen and (min-width: 768px) {
-  .socials {
+  .socials--stuck {
     display: flex;
   }
 }
