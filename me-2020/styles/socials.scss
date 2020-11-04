@@ -1,8 +1,9 @@
 .socials {
-    display: none;
+    display: flex;
     justify-content: center;
 
     &--stuck {
+        display: none;
         position: fixed;
         top: 20px;
 
@@ -23,6 +24,8 @@
 
 @media screen and (min-width: 768px) {
     .socials {
-        display: flex;
+        &--stuck {
+            display: flex;
+        }
     }
 }
