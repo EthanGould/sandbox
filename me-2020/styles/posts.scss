@@ -33,6 +33,9 @@
 
     &__img {
         width: 100%;
+        padding: 10px 10px 3px;
+        box-sizing: border-box;
+        border-radius: 15px;
     }
 
     &__desc {

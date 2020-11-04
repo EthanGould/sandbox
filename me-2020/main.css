@@ -140,6 +140,9 @@ li {
 }
 .post__img {
   width: 100%;
+  padding: 10px 10px 3px;
+  box-sizing: border-box;
+  border-radius: 15px;
 }
 .post__desc {
   padding: 10px 20px;
@@ -175,7 +178,6 @@ li {
 }
 .section__content--hidden {
   opacity: 0;
-  min-height: 100vh;
   max-width: 1100px;
 }
 .section__header {
@@ -214,6 +216,25 @@ li {
     padding: 20vh;
   }
 }
+.socials {
+  display: flex;
+  justify-content: center;
+}
+.socials--stuck {
+  position: fixed;
+  top: 20px;
+}
+.socials--stuck svg {
+  fill: white;
+}
+.socials__item {
+  margin: 0 0 20px 20px;
+}
+.socials svg {
+  height: 30px;
+  width: 30px;
+}
+
 .header {
   position: fixed;
   z-index: -1;

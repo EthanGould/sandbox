@@ -1,0 +1,22 @@
+.socials {
+    display: flex;
+    justify-content: center;
+
+    &--stuck {
+        position: fixed;
+        top: 20px;
+
+        svg {
+            fill: white;
+        }
+    }
+    
+    &__item {
+        margin: 0 0 20px 20px;
+    }
+
+    svg {
+        height: 30px;
+        width: 30px;
+    }
+}
