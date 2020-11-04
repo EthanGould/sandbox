@@ -217,7 +217,7 @@ li {
   }
 }
 .socials {
-  display: flex;
+  display: none;
   justify-content: center;
 }
 .socials--stuck {
@@ -235,6 +235,11 @@ li {
   width: 30px;
 }
 
+@media screen and (min-width: 768px) {
+  .socials {
+    display: flex;
+  }
+}
 .header {
   position: fixed;
   z-index: -1;
