@@ -6,11 +6,11 @@ body {
 }
 
 a {
-  color: #910083;
-  transition: color 0.2s;
+  color: black;
+  transition: color 0.1s;
 }
 a:hover, a:focus {
-  color: #b302a1;
+  color: grey;
 }
 
 ul {
@@ -70,6 +70,16 @@ li {
   font-size: 16px;
   text-align: center;
   font-family: "Carter One", sans-serif;
+}
+.card__link {
+  padding: 1px 4px;
+  background: #fdc5f8;
+  color: black;
+  text-decoration: none;
+}
+.card__link:hover, .card__link:focus {
+  background: #ffacf8;
+  color: black;
 }
 
 @media screen and (min-width: 768px) {
@@ -179,6 +189,9 @@ li {
   clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
   background: white;
 }
+.section--sliced svg {
+  fill: black !important;
+}
 .section__content {
   width: 95%;
   margin: 0 auto;
@@ -233,11 +246,17 @@ li {
   position: fixed;
   top: 20px;
 }
+.socials--stuck .socials__item {
+  margin-bottom: 0;
+}
 .socials--stuck svg {
   fill: white;
 }
+.socials--inverted {
+  display: none;
+}
 .socials__item {
-  margin: 0 0 20px 20px;
+  margin: 0 0 60px 20px;
 }
 .socials svg {
   height: 30px;
@@ -245,7 +264,12 @@ li {
 }
 
 @media screen and (min-width: 768px) {
-  .socials--stuck {
+  .socials--stuck:not(.socials--inverted) {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .socials--inverted {
     display: flex;
   }
 }
@@ -282,11 +306,25 @@ li {
   display: block;
 }
 .profile-pic-border {
-  background: linear-gradient(310deg, #aaffad, #76fff8);
+  position: relative;
   width: 160px;
   height: 160px;
   margin: 0 auto;
   border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(310deg, #7fff83, #1ef8ed);
+}
+.profile-pic-border::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  right: -100%;
+  bottom: -100%;
+  animation: shine 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  background: linear-gradient(45deg, transparent 25%, rgba(214, 214, 214, 0.5) 35%, transparent 40%, rgba(214, 214, 214, 0.5) 50%, transparent 55%);
 }
 
 .tag-line {
@@ -294,7 +332,6 @@ li {
   font-size: 14px;
   text-align: center;
   animation: fadeUp 0.5s;
-  animation-delay: 1s;
   animation-fill-mode: forwards;
 }
 
@@ -309,7 +346,7 @@ li {
   text-align: center;
   opacity: 0;
   animation: fadeIn 0.5s;
-  animation-delay: 2s;
+  animation-delay: 1s;
   animation-fill-mode: forwards;
 }
 
@@ -363,6 +400,14 @@ li {
   }
   to {
     opacity: 1;
+  }
+}
+@keyframes shine {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
   }
 }
 @keyframes fadeUp {

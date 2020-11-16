@@ -5,12 +5,12 @@ body {
 }
 
 a {
-    color: #910083;
-    transition: color 0.2s;
+    color: black;
+    transition: color 0.1s;
 
     &:hover,
     &:focus {
-        color: #b302a1;
+        color: grey;
     }
 }
 
@@ -71,11 +71,26 @@ li {
     display: block;
 
     &-border {
-        background: linear-gradient(310deg, #aaffad, #76fff8);
+        position: relative;
         width: 160px;
         height: 160px;
         margin: 0 auto;
         border-radius: 50%;
+        overflow: hidden;
+        background: linear-gradient(310deg, #7fff83, #1ef8ed);
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            right: -100%;
+            bottom: -100%;
+            animation: shine 2s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+            background: linear-gradient(45deg, transparent 25%, rgba(#d6d6d6, .5) 35%, transparent 40%, rgba(#d6d6d6, .5) 50%, transparent 55%);
+        }
     }
 }
 
@@ -85,7 +100,6 @@ li {
     text-align: center;
 
     animation: fadeUp .5s;
-    animation-delay: 1s;
     animation-fill-mode: forwards;
 }
 
@@ -100,7 +114,7 @@ li {
     text-align: center;
     opacity: 0;
     animation: fadeIn .5s;
-    animation-delay: 2s;
+    animation-delay: 1s;
     animation-fill-mode: forwards;
 }
 
@@ -167,6 +181,16 @@ li {
 
     to {
         opacity: 1;
+    }
+}
+
+@keyframes shine {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
     }
 }
 

@@ -1,7 +1,7 @@
 var module = {};
 
 module.init = () => {
-    module.siteContent = document.querySelector('.section--sliced');
+    module.siteIntroContent = document.querySelector('.js-intro-section');
     module.siteMainContent = document.querySelector('.js-main-content');
     module.cards = document.querySelectorAll('.js-card');
     module.header = document.querySelector('.js-header');
@@ -16,7 +16,7 @@ module.events = () => {
 };
 
 module.handleScroll = ()  => {
-    let scrollTopContent = module.siteContent.getBoundingClientRect().top;
+    let scrollTopContent = module.siteIntroContent.getBoundingClientRect().top;
     let scrollTopMainContent = module.siteMainContent.getBoundingClientRect().top;
 
     if (scrollTopContent <= 0) {
@@ -28,8 +28,6 @@ module.handleScroll = ()  => {
     } else {
         module.collapseCards();
     }
-
-    module.fadeHeader();
 }
 
 module.spreadCards = () => {
@@ -50,13 +48,6 @@ module.collapseCards = () => {
 
 module.fadeContent = () => {
     module.siteMainContent.classList.add('fade-in');
-}
-
-module.fadeHeader = () => {
-    var topScroll = module.siteContent.getBoundingClientRect().top;
-    var headerheight = module.headerText.clientHeight;
-
-    module.header.style.filter = 'brightness(' + ((topScroll / (headerheight - 100)) * 100) + '%)';
 }
 
 window.addEventListener('load', () => {
