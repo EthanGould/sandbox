@@ -19,7 +19,7 @@ module.handleScroll = ()  => {
     let scrollTopContent = module.siteIntroContent.getBoundingClientRect().top;
     let scrollTopMainContent = module.siteMainContent.getBoundingClientRect().top;
 
-    if (scrollTopContent <= 0) {
+    if (scrollTopContent <= 200) {
         module.fadeContent();
     }
 

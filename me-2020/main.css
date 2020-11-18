@@ -38,7 +38,7 @@ li {
 
 .card {
   width: 275px;
-  margin: 20px auto;
+  margin: 0 auto;
   padding: 20px;
   min-height: 250px;
   border-radius: 10px;
@@ -183,9 +183,8 @@ li {
   margin-top: -1px;
 }
 .section--sliced {
-  height: 50vh;
   margin-top: 30vh;
-  padding: 10vh 0;
+  padding: 10vh 0 0;
   clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
   background: white;
 }
@@ -202,13 +201,14 @@ li {
   max-width: 1100px;
 }
 .section__header {
-  margin: 0 0 20px;
-  font-size: 14px;
+  margin: 0 0 10px;
+  text-align: center;
+  font-size: 18px;
   font-family: "Carter One", sans-serif;
 }
 .section__copy {
   margin: 0 auto 30px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 @media screen and (min-width: 350px) {
@@ -221,14 +221,8 @@ li {
 }
 @media screen and (min-width: 768px) {
   .section--sliced {
-    height: 40vh;
     padding: 15vh 0 0;
     clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
-  }
-}
-@media (max-height: 1700px) {
-  .section--sliced {
-    min-height: 500px;
   }
 }
 @media (orientation: landscape) and (max-width: 850px) {
@@ -329,8 +323,6 @@ li {
 
 .tag-line {
   opacity: 0;
-  font-size: 14px;
-  text-align: center;
   animation: fadeUp 0.5s;
   animation-fill-mode: forwards;
 }
@@ -341,7 +333,6 @@ li {
 }
 
 .fade-copy {
-  margin: 20px auto;
   max-width: 600px;
   text-align: center;
   opacity: 0;
@@ -350,15 +341,6 @@ li {
   animation-fill-mode: forwards;
 }
 
-@media screen and (min-width: 350px) {
-  .fade-copy {
-    margin: 40px auto;
-  }
-
-  .tag-line {
-    font-size: 18px;
-  }
-}
 @media screen and (min-width: 768px) {
   .header__text {
     max-height: unset;

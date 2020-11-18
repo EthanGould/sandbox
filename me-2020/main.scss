@@ -96,9 +96,6 @@ li {
 
 .tag-line {
     opacity: 0;
-    font-size: 14px;
-    text-align: center;
-
     animation: fadeUp .5s;
     animation-fill-mode: forwards;
 }
@@ -109,24 +106,12 @@ li {
 }
 
 .fade-copy {
-    margin: 20px auto;
     max-width: 600px;
     text-align: center;
     opacity: 0;
     animation: fadeIn .5s;
     animation-delay: 1s;
     animation-fill-mode: forwards;
-}
-
-@media screen and (min-width: 350px) {
-
-    .fade-copy {
-        margin: 40px auto;
-    }
-
-    .tag-line {
-        font-size: 18px;
-    }
 }
 
 @media screen and (min-width: 768px) {
