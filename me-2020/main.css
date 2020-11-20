@@ -42,7 +42,7 @@ li {
   padding: 20px;
   min-height: 250px;
   border-radius: 10px;
-  border: 1px solid grey;
+  border: 1px solid rgba(0, 0, 0, 0.3);
   transition: transform 0.5s;
 }
 .card--html {
@@ -177,18 +177,15 @@ li {
   }
 }
 .section {
-  background: white;
   color: black;
-  padding: 60px 0;
-  margin-top: -1px;
+  padding-bottom: 60px;
 }
-.section--sliced {
-  margin-top: 30vh;
-  padding: 10vh 0 0;
-  clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
-  background: white;
+.section--main {
+  clip-path: polygon(0 8%, 100% 10%, 100% 100%, 0 100%);
+  background: linear-gradient(white, #c3f9f5, #ddbefb 80%, #df68fc);
+  padding: 40vh 0 0;
 }
-.section--sliced svg {
+.section--main svg {
   fill: black !important;
 }
 .section__content {
@@ -220,15 +217,19 @@ li {
   }
 }
 @media screen and (min-width: 768px) {
-  .section--sliced {
-    padding: 15vh 0 0;
-    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+  .section--main {
+    padding: 25vh 0 0;
+    clip-path: polygon(0 5%, 100% 10%, 100% 100%, 0 100%);
+    margin-top: 20vh;
+    background: radial-gradient(white, #c3f9f5, #ddbefb 80%, #df68fc);
   }
 }
 @media (orientation: landscape) and (max-width: 850px) {
-  .section--sliced {
+  .section--main {
     height: auto;
-    padding: 20vh;
+    clip-path: polygon(0 7%, 100% 10%, 100% 100%, 0 100%);
+    padding: 60vh 20vh 0;
+    margin-top: -5vh;
   }
 }
 .socials {
@@ -309,6 +310,7 @@ li {
   -webkit-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
   background: linear-gradient(310deg, #7fff83, #1ef8ed);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .profile-pic-border::after {
   content: "";

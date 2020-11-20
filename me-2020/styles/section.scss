@@ -1,14 +1,11 @@
 .section {
-    background: white;
     color: black;
-    padding: 60px 0;
-    margin-top: -1px;
+    padding-bottom: 60px;
 
-    &--sliced {
-        margin-top: 30vh;
-        padding: 10vh 0 0;
-        clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
-        background: white;
+    &--main {
+        clip-path: polygon(0 8%, 100% 10%, 100% 100%, 0 100%);
+        background: linear-gradient(white, #c3f9f5, #ddbefb 80%, #df68fc);
+        padding: 40vh 0 0;
 
         svg {
             fill: black !important;
@@ -54,19 +51,22 @@
 @media screen and (min-width: 768px) {
 
     .section {
-        &--sliced {
-            padding: 15vh 0 0;
-            clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+        &--main {
+            padding: 25vh 0 0;
+            clip-path: polygon(0 5%, 100% 10%, 100% 100%, 0 100%);
+            margin-top: 20vh;
+            background: radial-gradient(white, #c3f9f5, #ddbefb 80%, #df68fc);
         }
     }
 }
 
 @media (orientation: landscape) and (max-width: 850px) {
     .section {
-
-        &--sliced {
+        &--main {
             height: auto;
-            padding: 20vh;
+            clip-path: polygon(0 7%, 100% 10%, 100% 100%, 0 100%);
+            padding: 60vh 20vh 0;
+            margin-top: -5vh;
         }
     }
 }
