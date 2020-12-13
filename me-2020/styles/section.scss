@@ -33,6 +33,7 @@
     &__copy {
         margin: 0 auto 30px;
         font-size: 16px;
+        font-weight: bold;
     }
 }
 
@@ -56,6 +57,10 @@
             clip-path: polygon(0 5%, 10% 8%, 20% 0%, 30% 6%, 40% 4%, 50% 9%, 100% 10%, 100% 100%, 0 100%);
             margin-top: 20vh;
             background: radial-gradient(white, #c3f9f5, #ddbefb 80%, #df68fc);
+        }
+
+        &__copy {
+            margin: 0 auto 80px;
         }
     }
 }

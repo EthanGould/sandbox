@@ -6,6 +6,12 @@ module.init = () => {
     module.cards = document.querySelectorAll('.js-card');
     module.header = document.querySelector('.js-header');
     module.headerText = document.querySelector('.js-header-text');
+    module.profilePic = document.querySelectorAll('.js-profile-pic');
+    module.profileSummary = document.querySelectorAll('.js-profile-summary');
+    module.profileSummaryDefault = document.querySelector('.js-profile-summary[data-default]');
+    module.profileCarousel = document.querySelector('.js-img-carousel');
+    module.profileSummaries = document.querySelector('.js-carousel-summaries');
+
     module.cardSpreadOffset = 550;
 
     module.events();
@@ -37,15 +43,31 @@ module.throttle = (fn, wait) => {
 }
 
 module.events = () => {
-    // Returns a function, that, as long as it continues to be invoked, will not
-    // be triggered. The function will be called after it stops being called for
-    // N milliseconds. If `immediate` is passed, trigger the function on the
-    // leading edge, instead of the trailing.
-    
-    console.log('boop');
     window.addEventListener('scroll', module.handleScroll);
+
+    module.profilePic.forEach(el => {
+        el.addEventListener ('mouseenter', module.updateProfileSummary);
+        el.addEventListener('focus', module.updateProfileSummary);
+    });
+
+    module.profileCarousel.addEventListener('mouseleave', module.resetCarousel)
 };
 
+module.resetCarousel = (e) => {
+    module.profileSummary.forEach(el => el.style.display = 'none');
+    module.profileSummaryDefault.style.display = 'block';
+}
+
+module.updateProfileSummary = e => {
+    module.profileSummary.forEach(el => el.style.display = 'none');
+    let summary = document.querySelector(`[data-summary="${e.target.dataset.index}"]`);
+    summary.style.display = 'block';
+}
+
+// Returns a function, that, as long as it continues to be invoked, will not
+// be triggered. The function will be called after it stops being called for
+// N milliseconds. If `immediate` is passed, trigger the function on the
+// leading edge, instead of the trailing.
 module.handleScroll = module.throttle(()  => {
     console.log('runing');
     let scrollTopContent = module.siteIntroContent.getBoundingClientRect().top;
