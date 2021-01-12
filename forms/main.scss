@@ -1,0 +1,28 @@
+:root {
+    --header-color: black;
+    --bg-color: white;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    transition: background-color 0.3s;
+    background-color: var(--bg-color);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+section {
+    margin: 100px 0;
+}
+
+@import "styles/socials";
+@import "styles/form";
+@import "styles/toggle";
