@@ -10,6 +10,21 @@ body {
     background-color: var(--bg-color);
 }
 
+h1 {
+    margin: 100px 30px;
+    line-height: 1.5;
+    color: var(--header-color);
+    text-align: center;
+    font-size: 26px;
+
+    span {
+        background: rgb(175, 175, 175);
+        font-family: monospace;
+        padding: 2px 5px 5px;
+        border-radius: 10px;
+    }
+}
+
 ul {
     margin: 0;
     padding: 0;
@@ -26,3 +41,4 @@ section {
 @import "styles/socials";
 @import "styles/form";
 @import "styles/toggle";
+@import "styles/card";

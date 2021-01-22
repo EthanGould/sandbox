@@ -1,0 +1,111 @@
+
+
+
+
+
+
+
+
+.card {
+    flex-basis: 100%;
+    border: 2px solid rgb(130, 34, 194);
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    &:nth-child(even) {
+        margin: 25px auto;
+    }
+
+    &:nth-child(odd) {
+        margin: 25px auto;
+    }
+
+    &__img {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin: 0 auto;
+        width: 90%; 
+    }
+
+    &__copy {
+        font-family: sans-serif;
+        color: var(--header-color);
+        margin: 0 -1%;
+        padding: 10px 15px;
+        transition: transform 0.3s, background-color 0.3s;
+    }
+
+    &__link {
+        // background-color: rgb(213, 165, 245);
+        // padding: 2px 5px;
+        // border-radius: 5px;
+        color: rgba(130, 34, 194);
+    }
+    
+    input {
+        margin: 30px 0 0;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .card {
+        flex-basis: 40%;
+        transition: box-shadow 0.2s;
+        overflow: hidden;
+
+        &:hover,
+        &:focus-within {
+            box-shadow: 0 0 30px rgba(130, 34, 194, 0.3);
+
+            .card__img {
+                filter: grayscale(0);
+            }
+        }
+
+        &:nth-child(even) {
+            margin: 30px 5% 30px 2%;
+        }
+
+        &:nth-child(odd) {
+            margin: 30px 2% 30px 5%;
+        }
+
+        &__list {
+            flex-direction: row;
+        }
+
+        &__copy {
+            overflow: hidden;
+        }
+
+        &__img {
+            filter: grayscale(1);
+        }
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .card {
+        flex-basis: 30%;
+        transition: box-shadow 0.2s;
+        overflow: hidden;
+
+        &:nth-child(even) {
+            margin: 30px 18% 30px 2%;
+        }
+
+        &:nth-child(odd) {
+            margin: 30px 2% 30px 18%;
+        }
+    }
+}
