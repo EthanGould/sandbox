@@ -1,0 +1,49 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ss {
+  width: 100%;
+  margin-top: 10vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 0;
+  list-style: none;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+  box-shadow: 0 0 15px 5px #717171;
+  line-height: 0;
+}
+.ss li {
+  display: inline-block;
+  scroll-snap-align: center;
+  line-height: 0;
+}
+.ss img {
+  max-width: 100%;
+  line-height: 0;
+}
+.ss__dots {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: space-between;
+  width: 200px;
+  margin: 0 auto;
+}
+.ss__dot {
+  height: 8px;
+  width: 8px;
+  background: white;
+  border: 2px solid grey;
+  border-radius: 50%;
+  display: block;
+  transition: background 0.2s, transform 0.2s;
+}
+.ss__dot.current {
+  background: red;
+  transform: scale(1.5);
+}
+
+/*# sourceMappingURL=main.css.map */
