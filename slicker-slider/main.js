@@ -37,7 +37,7 @@ SS.autoplay = () => {
         // Get next slide, or go back to the first slide
         SS.currentSlide = SS.slides[SS.currentSlide + 1] ? SS.currentSlide + 1 : 0;
         SS.slides[SS.currentSlide].scrollIntoView({behavior: 'smooth'});
-    }, SS.conf.interval || 3000);
+    }, SS.conf.interval || 5000);
 }
 
 SS.generateNav = () => {
@@ -131,9 +131,7 @@ SS.eventHandlers = () => {
 const config = {
     el: '.ss__bound',
     dotNavigation: true,
-    autoplay: true,
-    interval: 1000,
-    visibleSlideCount: 1.25
+    visibleSlideCount: 1
 }
 
 /*
@@ -147,3 +145,4 @@ visibleSlideCount: float
 */
 
 SS.init(config);
+

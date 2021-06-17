@@ -15,7 +15,7 @@ button {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -31,13 +31,16 @@ button {
   box-shadow: 0 0 15px 5px #717171;
   line-height: 0;
 }
+.ss::-webkit-scrollbar {
+  display: none;
+}
 .ss li {
   display: inline-block;
   scroll-snap-align: center;
   line-height: 0;
 }
 .ss img {
-  max-width: 100%;
+  width: 100%;
   line-height: 0;
 }
 .ss__bound {
