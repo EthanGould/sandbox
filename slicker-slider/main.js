@@ -7,9 +7,8 @@ SS.init = (conf) => {
     SS.slideList = document.querySelector(`${SS.conf.el} > ul`);
 
     if (SS.container) {
-        SS.eventHandlers();
-        SS.layout();
         SS.generateDots();
+        SS.layout();
     }
 }
 
@@ -19,25 +18,36 @@ SS.layout = () => {
     SS.slideList.classList.add('ss');
 }
 
+SS.gotoSlide = (e) => {
+    const slide = SS.slides[e.target.dataset.slide];
+    slide.scrollIntoView();
+    slide.focus();
+}
+
 SS.generateDots = () => {
     let dots = document.createElement('ul');
     dots.classList.add('ss__dots');
     SS.slides.forEach((s, i) => {
         let dot = document.createElement('li');
-        let link = document.createElement('a');
+        let indicator = document.createElement('button');
+        let altText = s.firstElementChild.getAttribute('alt');
 
-        dot.dataset.slide = i;
-        link.classList.add('ss__dot');
+        indicator.dataset.slide = i;
+        indicator.classList.add('ss__dot');
+        indicator.setAttribute('aria-label', `Goto slide ${i+1}, ${altText}`);
 
         if (i == 0) {
-            link.classList.add('current');
+            indicator.classList.add('current');
         }
 
-        dot.appendChild(link);
+        dot.appendChild(indicator);
         dots.appendChild(dot);
     });
     SS.container.appendChild(dots);
-    SS.dots = document.querySelectorAll('.ss__dots a');
+    SS.dots = document.querySelectorAll('.ss__dots button');
+
+    // Setup event handlers after all dynamic slider elements are created
+    SS.eventHandlers();
 
     // development only 
     window.slider = { container: SS.container, slides: SS.slides, dots: SS.dots, configs: config };
@@ -45,16 +55,16 @@ SS.generateDots = () => {
 }
 
 SS.setSlideDot = () => {
-    SS.dots.forEach((dot) => { dot.classList.remove('current') })
+    SS.dots.forEach((dot) => { dot.classList.remove('current') });
     let slideWidth = SS.container.clientWidth / SS.conf.visibleSlideCount;
-    let scrollPositon = SS.slideList.scrollLeft;
-    let currentSlide = Math.ceil(scrollPositon / slideWidth);
+    let currentSlide = Math.round(SS.slideList.scrollLeft / slideWidth);
     SS.dots[currentSlide].classList.add('current');
 }
 
 SS.eventHandlers = () => {
     window.addEventListener('resize', SS.layout);
-    SS.slideList.addEventListener('scroll', SS.setSlideDot);
+    SS.slideList.addEventListener('scroll', SS.setSlideDot); // #TODO throttle this event handler
+    SS.dots.forEach(d => d.addEventListener('click', SS.gotoSlide));
 }
 
 let config = {
