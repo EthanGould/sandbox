@@ -1,5 +1,17 @@
+body {
+  background: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 ul {
   list-style: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 .container {
@@ -28,6 +40,9 @@ ul {
   max-width: 100%;
   line-height: 0;
 }
+.ss__bound {
+  position: relative;
+}
 .ss__dots {
   display: flex;
   list-style: none;
@@ -39,15 +54,26 @@ ul {
 .ss__dot {
   height: 10px;
   width: 10px;
-  background: white;
-  border: 2px solid grey;
+  background: black;
+  border: 2px solid white;
   border-radius: 50%;
   padding: 0;
   display: block;
   transition: background 0.2s, transform 0.2s;
 }
 .ss__dot.current {
-  background: grey;
+  background: white;
+}
+.ss__play {
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+  padding: 10px 10px;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 12px;
+  border: 1px solid black;
 }
 
 /*# sourceMappingURL=main.css.map */

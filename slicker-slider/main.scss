@@ -1,5 +1,17 @@
+body {
+    background: black;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 ul {
     list-style: none;
+}
+
+button {
+    cursor: pointer;
 }
 
 .container {
@@ -30,6 +42,10 @@ ul {
         line-height: 0;
     }
 
+    &__bound {
+        position: relative;
+    }
+
     &__dots {
         display: flex;
         list-style: none;
@@ -42,15 +58,27 @@ ul {
     &__dot {
         height: 10px;
         width: 10px;
-        background: white;
-        border: 2px solid grey;
+        background: black;
+        border: 2px solid white;
         border-radius: 50%;
         padding: 0;
         display: block;
         transition: background .2s, transform .2s;
 
         &.current {
-            background: grey;
+            background: white;
         }
+    }
+
+    &__play {
+        position: absolute;
+        bottom: 30px;
+        right: 10px;
+        padding: 10px 10px;
+        background: white;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 12px;
+        border: 1px solid black;
     }
 }
